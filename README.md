@@ -109,21 +109,28 @@ ________________________________________________________________________________
 1.	Fuel Node:
 
     o	Reads analog fuel value via ADC
-    o	Converts to percentage
-    o	Sends CAN frame with ID=11 to Main Node
 
-2.	Main Node:
+  	o	Converts to percentage
+
+  	o	Sends CAN frame with ID=11 to Main Node
+
+3.	Main Node:
 
     o	Receives fuel percentage, displays on LCD
-    o	Reads accelerometer data via I²C, checks crash conditions
-    o	Displays SAFE or AIRBAG OPEN on LCD
-    o	Handles button interrupts for left/right indicators
+
+  	o	Reads accelerometer data via I²C, checks crash conditions
+
+  	o	Displays SAFE or AIRBAG OPEN on LCD
+
+  	o	Handles button interrupts for left/right indicators
+
   	o	Sends CAN frame with ID=10 and Data='L'/'R' to Indicator Node
 
-3.	Indicator Node:
+5.	Indicator Node:
 
     o	Receives left/right command from Main Node
-    o	Runs LED pattern (left-to-right or right-to-left) accordingly
+
+  	o	Runs LED pattern (left-to-right or right-to-left) accordingly
 ___________________________________________________________________________________________________________________________________________________________________
 
 📊 Flow Diagram
@@ -147,5 +154,7 @@ ________________________________________________________________________________
 4.	Observe:
 
     o	Fuel % updates on Main Node LCD
-    o	Left/Right buttons trigger LED animations.
-    o	Accelerometer tilt triggers Airbag alert.
+
+  	o	Left/Right buttons trigger LED animations.
+
+  	o	Accelerometer tilt triggers Airbag alert.

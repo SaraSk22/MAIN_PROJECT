@@ -1,9 +1,9 @@
-Real-Time Vehicle Status Monitoring System using CAN Protocol
+🚘REAL-TIME VEHICLE STATUS MONITORING SYSTEM USING CAN PROTOCOL
 
 
 This project implements a real-time vehicle monitoring system using the Controller Area Network (CAN) protocol with an ARM7 microcontroller (LPC21xx family). It monitors fuel level, driver indication (left/right turn signals), and airbag status, and communicates these events across multiple nodes over CAN.
 
-🚗 Project Overview
+🚗 PROJECT OVERVIEW
 
 Modern vehicles rely on distributed electronic control units (ECUs) to manage different subsystems (fuel system, airbag system, indicators, etc.). CAN protocol enables these ECUs to communicate efficiently.
 
@@ -17,7 +17,7 @@ This project demonstrates a mini ECU network consisting of:
 
 Together, these nodes simulate a real-time vehicle monitoring system.
 __________________________________________________________________________________________________________________________________________________________________
-📌 Features
+📌 FEATURES
 
 •	Fuel Monitoring:
 
@@ -63,23 +63,36 @@ ________________________________________________________________________________
 💻 Software Requirements
 
 •	Compiler/IDE: Keil µVision
+
 •	Programmer Tool: Flash Magic
+
 •	Languages: Embedded C
+
 •	Other Tools: Proteus (for simulation, optional)
 ___________________________________________________________________________________________________________________________________________________________________
 
 📂 Project Structure
 
 ├── MAIN_NODE.C        # Main ECU (Fuel display, airbag monitoring, turn signal send)
+
 ├── FUEL_NODE.C        # Fuel ECU (Reads ADC, sends fuel % over CAN)
+
 ├── INDICATOR.C        # Indicator ECU (Receives turn signal, controls LEDs)
+
 ├── lcd.h / lcd_defines.h
+
 ├── can.h / can_defines.h
+
 ├── adc.h / adc_defines.h
+
 ├── i2cc.h / i2cc_defines.h
+
 ├── delay.h
+
 ├── interrupt.h
+
 ├── pin_connect_block.h
+
 └── README.md          # Project Documentation
 
 ___________________________________________________________________________________________________________________________________________________________________
@@ -87,6 +100,7 @@ ________________________________________________________________________________
 🔗 CAN Message IDs
 
 •	ID = 10: Left/Right indicator message from Main Node → Indicator Node
+
 •	ID = 11: Fuel percentage message from Fuel Node → Main Node
 ___________________________________________________________________________________________________________________________________________________________________
 
@@ -115,9 +129,13 @@ ________________________________________________________________________________
 📊 Flow Diagram
 
 [Fuel Node] --(Fuel %)--> [Main Node] --(Turn signals)--> [Indicator Node]
+
                                 |
+                         
                          (Airbag Monitoring)
+                         
                                 ↓
+                              
                               [LCD]
 ___________________________________________________________________________________________________________________________________________________________________
 

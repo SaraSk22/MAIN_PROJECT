@@ -88,5 +88,5 @@ ________________________________________________________________________________
 3.	Power up all nodes.
 4.	Observe:
     o	Fuel % updates on Main Node LCD
-    o	Left/Right buttons trigger LED animations
-    o	Accelerometer tilt triggers Airbag alert
+    o	Left/Right buttons trigger LED animations.
+    o	Accelerometer tilt triggers Airbag alert.

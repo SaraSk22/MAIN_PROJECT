@@ -21,7 +21,7 @@ ________________________________________________________________________________
 
 •	Fuel Monitoring:
 
-    o	Reads analog fuel sensor data via ADC (LM35/voltage divider)
+    o	Reads analog fuel sensor data via ADC (LM35/voltage divider/fuel guage)
     o	Calculates fuel percentage
     o	Displays fuel % on LCD
     o	Sends fuel data to Main Node over CAN
@@ -40,19 +40,19 @@ ________________________________________________________________________________
     
 •	CAN Communication:
 
-    o	Implemented using LPC21xx CAN controller
+    o	Implemented using LPC2129 CAN controller
     o	Messages exchanged between nodes with unique CAN IDs
 ___________________________________________________________________________________________________________________________________________________________________
 
 🛠️ Hardware Requirements
 
-•	Microcontroller: LPC2148 / LPC2129 (ARM7 TDMI-S)
+•	Microcontroller: LPC2129 (ARM7 TDMI-S)
 
 •	Modules & Components:
 
     o	MMA7660FC Accelerometer (I²C based)
     o	LCD 16x2 Display
-    o	Fuel Sensor (LM35 / Potentiometer / Voltage Divider for ADC)
+    o	Fuel Sensor (Fuel guage/ LM35 / Potentiometer / Voltage Divider for ADC)
     o	LEDs (for turn indicators)
     o	External Push Buttons (for Left/Right indication via interrupts)
     o	CAN Transceiver (MCP2551 / SN65HVD230)
@@ -148,7 +148,7 @@ ________________________________________________________________________________
 
 🚀 How to Run
 
-1.	Flash each .c file to the respective LPC2148 boards (Main, Fuel, Indicator).
+1.	Flash each .c file to the respective LPC2129 boards (Main, Fuel, Indicator).
 2.	Connect CAN transceivers (MCP2551) to each board and link via CAN bus.
 3.	Power up all nodes.
 4.	Observe:
